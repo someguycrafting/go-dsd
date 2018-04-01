@@ -1,5 +1,30 @@
 package dsd
 
+func u16tob(u uint16) byte {
+	return byte(u)
+}
+
+func u16stoubs(u []uint16) []byte {
+	var b = make([]byte, len(u))
+	for j, k := range u {
+		b[j] = u16tob(k)
+	}
+	return b
+}
+
+func btou16(b byte) uint16 {
+	return uint16(b)
+}
+
+func bstou16s(b []byte) []uint16 {
+	var u = make([]uint16, len(b))
+	for j, k := range b {
+		u[j] = btou16(k)
+	}
+	return u
+}
+
+
 func f32toi32(f float32) int32 {
 	return int32(f * 2147483648.0)
 }
